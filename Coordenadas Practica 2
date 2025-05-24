@@ -1,0 +1,94 @@
+# Coordenadas-Practica-2
+import matplotlib.pyplot as plt
+
+print("aqui inicia la practica")
+print("cantidad de coordenadas:")
+coord_totales= int(input())
+
+coordenadas=[]
+for i in range(0,coord_totales):
+    print("ingrese coordenada",i)
+    x=int(input("x:"))
+    y=int(input("y:"))
+    coordenadas.append((x,y))
+
+print(coordenadas)
+print(type(coordenadas[0][0]))
+from math import sqrt
+distancias=[]
+for j in range(0,coord_totales-1):
+    dx=(coordenadas[j+1][0]-coordenadas[j][0])
+    print(dx)
+    dy=(coordenadas[j+1][1]-coordenadas[j][1])
+    distancias.append(sqrt((dx**2)+(dy**2)))
+
+
+x_vals = [p[0] for p in coordenadas]
+y_vals = [p[1] for p in coordenadas]
+
+
+plt.plot(x_vals, y_vals, marker='o', linestyle='-')
+
+plt.title("Gráfico de Coordenadas")
+plt.xlabel("Eje X")
+plt.ylabel("Eje Y")
+plt.grid(True)
+plt.show()
+
+
+print("\nDistancias entre puntos consecutivos:")
+print(distancias)
+
+DESCRIPCION
+Empezamos por representar un trazado de coordenadas con el matplotlib 
+En el codigo se expresa de forma poco compleja y se intenta representar lo visto en clase , 
+con lo escrito de cordenadas solicito al codigo lo que el usuario busca utilizando las coordenadas (x , y ) teniendo en cuanta que son mas de 2 valores 
+y teniendo en cuneta qeu no es como en el ejercicio de Manhatan
+ Punto 1 = (10, 20)  
+ Punto 2 = (40, 100)
+
+Tenienido en cuenta lo que vimos  on el profe se tiene que crear una lista que contenga los datos de las coordenadas y posicionarlas de tal manera que 
+sean posiobles de lerse por el codigo 
+El siguiente paso en print es que se mida las distancias entre los puntos para que se trazen los rayos 
+Trayendo tambien la funcion SQRT desde las librerias Math esto es una Raiz cuadrada 
+
+Usando ya lo mencionado tenemos que hacer que las coordenadas se guien y calculen distancia y se podria usar o interpretar asi:
+euclidiana(0 coord_totales):
+#coordenadas=[]
+for i in range(0,coord_totales):
+    print("ingrese coordenada",i)
+    x=int(input("x:"))
+    y=int(input("y:"))
+    coordenadas.append((x,y))
+
+Lo que sifue es ubicar que es lo que se tiene que trazar y ubicar en donde empezara el punto inicial , 
+print(coordenadas)
+print(type(coordenadas[0][0]))
+from math import sqrt
+distancias=[]
+for j in range(0,coord_totales-1):
+    dx=(coordenadas[j+1][0]-coordenadas[j][0])
+    print(dx)
+    dy=(coordenadas[j+1][1]-coordenadas[j][1])
+    distancias.append(sqrt((dx**2)+(dy**2)))
+
+  lo siguiente es el tema de trazado que se hara para conectarse de punto 1 (x) hasia el punto 2 (y) si no solo seran
+  puntos marcados y mencionar sobre todo que en el codigo que antes mencione habia un error que si no especificas con 
+  sertesa lo que necesitas sobre los coordenadas ya que pueden salir los trazos pues saldrian al azar y no conectadas 
+
+x_vals = [p[0] for p in coordenadas]
+y_vals = [p[1] for p in coordenadas]
+
+
+plt.plot(x_vals, y_vals, marker='o', linestyle='-')
+
+plt.title("Gráfico de Coordenadas")
+plt.xlabel("Eje X")
+plt.ylabel("Eje Y")
+plt.grid(True)
+plt.show()
+
+tambien especifiando un titulo como lo menciono la semana pasada y ya con esto explayado solo se pondria la orden de 
+imprimirlo y se procederia a meter las coordenadas y hacer que se formaran las letras con empezar metiendo cuantos puntos
+tiene esa letra 
+Mi ejemplo seria que hice la letra T que tiene 8 y lleva (3,1)(3,5)(1,)(5,)(1,7)(7,7)(7,5)(5,5)(5,1) 
